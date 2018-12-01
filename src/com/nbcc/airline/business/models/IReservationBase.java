@@ -10,8 +10,8 @@ package com.nbcc.airline.business.models;
  * @author Greg.VanKampen
  */
 public interface IReservationBase {
-    int	    getID();
-    void    setID(int id);
+    int	    getId();
+    void    setId(int id);
     String  getStatus();
     void    setStatus(String Status);
     String  getStartDate();
@@ -19,10 +19,10 @@ public interface IReservationBase {
     String  getEndDate();
     void    setEndDate(String endDate);
     int	    getPassengerNo();
-    void    setPassenengerNo(int passengerNo);
+    void    setPassengerNo(int passengerNo);
     String  getTicketType();
     void    setTicketType(String ticketType);
-    boolean getNonStopFlight();
+    boolean isNonStopFlight();
     void    setNonStopFlight(boolean nonStopFlight);
     String  getFlightClass();
     void    setFlightClass(String flightClass);
@@ -30,7 +30,7 @@ public interface IReservationBase {
     void    setCreditType(String creditType);
     int	    getCreditNo();
     void    setCreditNo(int creditCardNo);
-    String  getCredidExpDate();
+    String  getCreditExpDate();
     void    setCreditExpDate(String creditExpDate);
     int	    getCreditId();
     void    setCreditId(int creditId);
@@ -40,10 +40,10 @@ public interface IReservationBase {
     void    setAddress2(String address2);
     String  getCountry();
     void    setCountry(String country);
-    float   getTotalCost();
+    float   getTotalCosts();
     void    setTotalCosts(float totalCosts);
-    float   getTransportCost();
-    void    setTransportCost(float transportCost);
+    float   getTransportCosts();
+    void    setTransportCosts(float transportCosts);
     float   getOtherFees();
     void    setOtherFees(float otherFees);
     
