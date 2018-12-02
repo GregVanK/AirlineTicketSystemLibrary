@@ -7,6 +7,7 @@ package com.nbcc.airline.repository;
 
 import com.nbcc.airline.access.DALRdbms;
 import com.nbcc.airline.access.IParameter;
+import com.nbcc.airline.access.IParameter.Type;
 import com.nbcc.airline.access.Parameter;
 import com.nbcc.airline.business.models.IReservationBase;
 import java.util.ArrayList;
@@ -25,7 +26,6 @@ public class ReservationRepository extends RepositoryBase {
             List<Object> returnValues;
             List<IParameter> params = new ArrayList(){
             {
-             add(new Parameter(reserve.getId()));
              add(new Parameter(reserve.getStatus()));
              add(new Parameter(reserve.getStartDate()));
              add(new Parameter(reserve.getEndDate()));
@@ -45,6 +45,7 @@ public class ReservationRepository extends RepositoryBase {
              add(new Parameter(reserve.getTotalCosts()));
              add(new Parameter(reserve.getTransportCosts()));
              add(new Parameter(reserve.getTotalCosts()));
+             add(new Parameter(reserveID,Type.OUT,java.sql.Types.INTEGER));
             }
         };
             returnValues = DALRdbms.executeNonQuery(SPROC_INSERT_REPOSITORY_WITH_RETURN,params);
