@@ -22,10 +22,12 @@ public class ReservationBase implements Serializable, IReservationBase {
     String  flightClass;
     String  creditType;
     int	    creditNo;
+    String  creditHolder;
     String  creditExpDate;
     int	    creditId;
     String  address1;
     String  address2;
+    String  postalCode;
     String  country;
     float   totalCosts;
     float   transportCosts;
@@ -112,6 +114,15 @@ public class ReservationBase implements Serializable, IReservationBase {
 	this.creditNo = creditNo;
     }
     @Override
+    public String getCreditHolder() {
+        return creditHolder;
+    }
+    @Override
+    public void setCreditHolder(String creditHolder) {
+        this.creditHolder = creditHolder;
+    }
+    
+    @Override
     public String getCreditExpDate() {
 	return creditExpDate;
     }
@@ -143,6 +154,15 @@ public class ReservationBase implements Serializable, IReservationBase {
     public void setAddress2(String address2) {
 	this.address2 = address2;
     }
+    @Override
+    public String getPostalCode() {
+        return postalCode;
+    }
+    @Override
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+    
     @Override
     public String getCountry() {
 	return country;

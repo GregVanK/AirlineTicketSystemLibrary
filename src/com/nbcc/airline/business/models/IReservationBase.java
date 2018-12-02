@@ -30,6 +30,8 @@ public interface IReservationBase {
     void    setCreditType(String creditType);
     int	    getCreditNo();
     void    setCreditNo(int creditCardNo);
+    String  getCreditHolder();
+    void    setCreditHolder(String creditHolder);
     String  getCreditExpDate();
     void    setCreditExpDate(String creditExpDate);
     int	    getCreditId();
@@ -38,6 +40,8 @@ public interface IReservationBase {
     void    setAddress1(String address1);
     String  getAddress2();
     void    setAddress2(String address2);
+    String  getPostalCode();
+    void    setPostalCode(String postalCode);
     String  getCountry();
     void    setCountry(String country);
     float   getTotalCosts();
