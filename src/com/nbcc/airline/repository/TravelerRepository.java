@@ -18,7 +18,7 @@ import java.util.List;
  * @author Greg.VanKampen
  */
 public class TravelerRepository {
-    private final String SPROC_INSERT_TRAVELER_WITH_RETURN = "CALL InsertFlight(?,?,?,?,?,?,?,?,?,?)";
+    private final String SPROC_INSERT_TRAVELER_WITH_RETURN = "CALL InsertTraveler(?,?,?,?,?,?,?,?,?)";
     public int insertTraveler(ITravelerBase traveler){
         int returnID = 0;
         try {
@@ -31,7 +31,6 @@ public class TravelerRepository {
              add(new Parameter(traveler.getlName()));
              add(new Parameter(traveler.getGender()));
              add(new Parameter(traveler.getPhoneNo()));
-             add(new Parameter(traveler.getPassport()));
              add(new Parameter(traveler.getPassport()));
              add(new Parameter(traveler.getBirthday()));
              add(new Parameter(traveler.getEmail()));

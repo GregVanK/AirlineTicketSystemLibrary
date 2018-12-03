@@ -6,6 +6,7 @@
 package com.nbcc.airline.business;
 
 import com.nbcc.airline.business.models.ITravelerBase;
+import com.nbcc.airline.business.models.TravelerBase;
 import com.nbcc.airline.repository.TravelerRepository;
 
 /**
@@ -16,6 +17,8 @@ public class Traveler {
     private TravelerRepository repo;
     public Traveler(){
         repo = new TravelerRepository();
+        
+        
     }
     public ITravelerBase createTraveler(ITravelerBase traveler) throws Exception{
         int travelerID = 0;
@@ -28,4 +31,5 @@ public class Traveler {
             throw new TravelerException("Invalid traveler values");
         }
     }
+    
 }
