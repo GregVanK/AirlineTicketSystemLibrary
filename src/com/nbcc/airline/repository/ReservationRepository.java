@@ -18,7 +18,7 @@ import java.util.List;
  * @author Greg.VanKampen
  */
 public class ReservationRepository extends RepositoryBase {
-    private final String SPROC_INSERT_REPOSITORY_WITH_RETURN = "CALL InsertReservation(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+    private final String SPROC_INSERT_REPOSITORY_WITH_RETURN = "CALL InsertReservation(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
     public int insertReservation(IReservationBase reserve){
         int returnID = 0;
         try {
@@ -49,9 +49,9 @@ public class ReservationRepository extends RepositoryBase {
             }
         };
             returnValues = DALRdbms.executeNonQuery(SPROC_INSERT_REPOSITORY_WITH_RETURN,params);
-            if(returnValues != null){
-                returnID = Integer.parseInt(returnValues.get(0).toString());
-            }
+//            if(returnValues != null){
+//                returnID = Integer.parseInt(returnValues.get(0).toString());
+//            }
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }

@@ -8,9 +8,13 @@ package com.nbcc.airline.repository;
 import com.nbcc.airline.access.DALRdbms;
 import com.nbcc.airline.access.IParameter;
 import com.nbcc.airline.access.Parameter;
+import com.nbcc.airline.business.models.AirportBase;
+import com.nbcc.airline.business.models.IAirportBase;
 import com.nbcc.airline.business.models.IFlightBase;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.sql.rowset.CachedRowSet;
 
 /**
  *
@@ -18,6 +22,7 @@ import java.util.List;
  */
 public class FlightRepository {
      private final String SPROC_INSERT_FLIGHT = "CALL InsertFlight(?,?,?,?,?,?,?,?,?,?,?)";
+     private final String SPROC_GET_AIRPORTS = "CALL GetAirports()";
     public int insertFlight(IFlightBase flight){
         int returnID = 0;
         try {
@@ -42,5 +47,32 @@ public class FlightRepository {
             System.out.println(e.getMessage());
         }
         return returnID;
+    }
+    
+    public List<IAirportBase> retrieveAirports(){
+	List<IAirportBase> airports = new ArrayList();
+	try {
+	    CachedRowSet rs = DALRdbms.executeFill(SPROC_GET_AIRPORTS, null);
+	    airports = toListOfAirports(rs); 
+	} catch (Exception e) {
+	    System.out.println(e.getMessage());
+	}
+	return airports;
+    }
+    
+    private List<IAirportBase> toListOfAirports(CachedRowSet rs)throws SQLException{
+	List<IAirportBase> airports = new ArrayList();
+	IAirportBase airport;
+	while(rs.next()){
+            try {
+                airport = new AirportBase();
+                airport.setName(rs.getString("Name"));
+                airport.setName(rs.getString("IATA"));
+                airports.add(airport);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
+        }
+        return airports;
     }
 }
