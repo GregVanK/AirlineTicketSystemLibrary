@@ -17,12 +17,10 @@ import java.util.List;
  * @author Greg.VanKampen
  */
 public class FlightRepository {
-     private final String SPROC_INSERT_FLIGHT_WITH_RETURN = "CALL InsertFlight(?,?,?,?,?,?,?,?,?,?)";
+     private final String SPROC_INSERT_FLIGHT = "CALL InsertFlight(?,?,?,?,?,?,?,?,?,?,?)";
     public int insertFlight(IFlightBase flight){
         int returnID = 0;
         try {
-            int flightNo = 0;
-            List<Object> returnValues;
             List<IParameter> params = new ArrayList(){
             {
              add(new Parameter(flight.getFlightNo()));
@@ -38,10 +36,8 @@ public class FlightRepository {
              add(new Parameter(flight.getPrice()));
             }
         };
-            returnValues = DALRdbms.executeNonQuery(SPROC_INSERT_FLIGHT_WITH_RETURN,params);
-            if(returnValues != null){
-                returnID = Integer.parseInt(returnValues.get(0).toString());
-            }
+            DALRdbms.executeNonQuery(SPROC_INSERT_FLIGHT,params);
+            
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
