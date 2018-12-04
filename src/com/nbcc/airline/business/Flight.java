@@ -5,8 +5,10 @@
  */
 package com.nbcc.airline.business;
 
+import com.nbcc.airline.business.models.IAirportBase;
 import com.nbcc.airline.business.models.IFlightBase;
 import com.nbcc.airline.repository.FlightRepository;
+import java.util.List;
 
 /**
  *
@@ -25,6 +27,8 @@ public class Flight {
         else{
             throw new FlightException("Invalid flight values");
         }
-        
+    }
+    public List<IAirportBase> getAirports(){
+	    return repo.retrieveAirports();
     }
 }

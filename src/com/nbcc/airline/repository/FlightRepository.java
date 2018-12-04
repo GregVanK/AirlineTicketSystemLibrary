@@ -67,7 +67,7 @@ public class FlightRepository {
             try {
                 airport = new AirportBase();
                 airport.setName(rs.getString("Name"));
-                airport.setName(rs.getString("IATA"));
+                airport.setIATA(rs.getString("IATA"));
                 airports.add(airport);
             } catch (Exception e) {
                 System.out.println(e.getMessage());
