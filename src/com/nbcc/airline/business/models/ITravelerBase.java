@@ -12,12 +12,12 @@ package com.nbcc.airline.business.models;
 public interface ITravelerBase {
     int	    getId();
     void    setId(int id);
-    String  getfName();
-    void    setfName(String fName);
-    String  getmName();
-    void    setmName(String mName);
-    String  getlName();
-    void    setlName(String lName);
+    String  getFName();
+    void    setFName(String fName);
+    String  getMName();
+    void    setMName(String mName);
+    String  getLName();
+    void    setLName(String lName);
     String  getGender();
     void    setGender(String gender);
     int	    getPhoneNo();

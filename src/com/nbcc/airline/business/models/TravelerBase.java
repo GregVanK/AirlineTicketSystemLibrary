@@ -32,27 +32,27 @@ public class TravelerBase implements Serializable, ITravelerBase{
 	this.id = id;
     }
     @Override
-    public String getfName() {
+    public String getFName() {
 	return fName;
     }
     @Override
-    public void setfName(String fName) {
+    public void setFName(String fName) {
 	this.fName = fName;
     }
     @Override
-    public String getmName() {
+    public String getMName() {
 	return mName;
     }
     @Override
-    public void setmName(String mName) {
+    public void setMName(String mName) {
 	this.mName = mName;
     }
     @Override
-    public String getlName() {
+    public String getLName() {
 	return lName;
     }
     @Override
-    public void setlName(String lName) {
+    public void setLName(String lName) {
 	this.lName = lName;
     }
     @Override

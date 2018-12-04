@@ -5,6 +5,7 @@
  */
 package com.nbcc.airline.business;
 
+import com.nbcc.airline.business.models.FlightBase;
 import com.nbcc.airline.business.models.IAirportBase;
 import com.nbcc.airline.business.models.IFlightBase;
 import com.nbcc.airline.repository.FlightRepository;
@@ -30,5 +31,20 @@ public class Flight {
     }
     public List<IAirportBase> getAirports(){
 	    return repo.retrieveAirports();
+    }
+    public IFlightBase getFlight(int FlightNo){
+        IFlightBase flight= new FlightBase();
+        flight = repo.retrieveFlight(FlightNo);
+        return flight;
+    }
+    public void updateFlight(IFlightBase flight)throws Exception{
+        if(true){//TODO: Add validation
+            repo.updateFlight(flight);
+            
+        }
+        else{
+            throw new FlightException("Unable to update flight: Missing Values");
+        }
+        
     }
 }

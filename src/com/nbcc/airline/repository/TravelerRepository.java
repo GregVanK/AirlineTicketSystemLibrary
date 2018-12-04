@@ -26,9 +26,9 @@ public class TravelerRepository {
             List<Object> returnValues;
             List<IParameter> params = new ArrayList(){
             {
-             add(new Parameter(traveler.getfName()));
-             add(new Parameter(traveler.getmName()));
-             add(new Parameter(traveler.getlName()));
+             add(new Parameter(traveler.getFName()));
+             add(new Parameter(traveler.getMName()));
+             add(new Parameter(traveler.getLName()));
              add(new Parameter(traveler.getGender()));
              add(new Parameter(traveler.getPhoneNo()));
              add(new Parameter(traveler.getPassport()));
