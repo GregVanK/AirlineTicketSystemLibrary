@@ -45,6 +45,11 @@ public class Flight {
         else{
             throw new FlightException("Unable to update flight: Missing Values");
         }
-        
+    }
+    public void deleteFlight(int flightNo){
+	repo.deleteFlight(flightNo);
+    }
+    public List<IFlightBase> searchFlights(IFlightBase flight){
+	return repo.searchFlights(flight);
     }
 }
